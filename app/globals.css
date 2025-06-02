@@ -1,6 +1,5 @@
 @import "../public/assets/font/font.css";
 @import "../public/assets/css/animate.css";
-@import '../styles/home/home.css';
 @keyframes shine {
   from {
     opacity: 0;
