@@ -1,5 +1,6 @@
 @import "../public/assets/font/font.css";
 @import "../public/assets/css/animate.css";
+@import '../styles/home/home.css';
 @keyframes shine {
   from {
     opacity: 0;
@@ -187,7 +188,6 @@
 }
 .custom-select.has-icon {
   --iconsize: 12px;
-  --iconurl: url(../../icon/location-gradient.svg);
   --iconspace: 8px;
 }
 .custom-select.has-icon::after {
@@ -223,7 +223,6 @@
   right: var(--paddingleftright);
   bottom: 0;
   width: var(--arrow);
-  background-image: url(../../icon/arrow-down-gray.svg);
   background-position: 0 50%;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -322,7 +321,7 @@
 }
 
 :root {
-  --headerpadding: 15px;
+  --headerpadding: 25px;
   --headerheight: 95px;
   --headerfixed: 60px;
   --footerstrip: 38px;
@@ -375,7 +374,7 @@ body::-webkit-scrollbar-track {
   box-shadow: none;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #ccc;
+  background: var(--gradient-a);
 }
 body.overflow-hidden {
   overflow: hidden;
@@ -422,6 +421,7 @@ a[href] {
   text-decoration: none;
   cursor: pointer;
   transition: 0.5s ease;
+  color: #fff;
 }
 a[href].logo {
   display: block;
@@ -490,6 +490,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+  font-family: Optima;
+  color: var(--white);
 }
 
 h1 {
@@ -932,6 +934,9 @@ button {
 .btn::after {
   opacity: 0;
 }
+.btn:hover {
+  color: var(--white);
+}
 .btn:hover::before {
   opacity: 0;
 }
@@ -989,7 +994,6 @@ button {
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--primary);
-  background-image: url(../../icon/arrow-down-primary.svg);
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-position-x: 100%;
@@ -999,16 +1003,11 @@ button {
   transition: color 0.5s ease;
   text-transform: uppercase;
 }
-.read-more.active {
-  background-image: url(../../icon/arrow-up-primary.svg);
-}
 .read-more.active:hover {
   color: var(--black);
-  background-image: url(../../icon/arrow-up-black.svg);
 }
 .read-more:hover {
   color: var(--black);
-  background-image: url(../../icon/arrow-down-black.svg);
 }
 
 .form-grid {
@@ -1683,8 +1682,6 @@ button {
 }
 
 .ico-sys {
-  -webkit-mask-image: url(../../images/vector/vector-2.svg);
-          mask-image: url(../../images/vector/vector-2.svg);
   -webkit-mask-size: 100%;
           mask-size: 100%;
   -webkit-mask-repeat: no-repeat;

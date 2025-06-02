@@ -11,7 +11,12 @@
     left: 100%;
   }
 }
+body {
+  background-color: #000;
+}
+
 .home-banner {
+  margin-top: var(--headerheight);
   position: relative;
   overflow: hidden;
 }
