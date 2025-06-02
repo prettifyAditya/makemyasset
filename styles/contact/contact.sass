@@ -1,0 +1,124 @@
+@import '../_var'
+
+.contact-secA
+    padding: 120px 0 135px
+    @include media(991)
+        padding: 6rem 0
+    @include media(675)
+        padding: 65px 0
+    .flex
+        gap: 80px
+        margin-left: auto
+        margin-right: auto
+        align-items: center
+        justify-content: center
+        @include media(767)
+            gap: 3rem
+            justify-content: center
+        @include media(520)
+            gap: 1rem
+        figure
+            flex: 0 1 43%
+            line-height: 0
+            img
+                width: 100%
+        figcaption
+            flex: 1
+            @include media(767)
+                flex: 0 1 100%
+            .heading
+                @include media(520)
+                    display: none
+            .contact-info
+                margin: 25px 0 50px
+                @include media(1007)
+                    margin: 25px 0 50px
+                @include media(675)
+                    margin: 25px 0 50px
+                li
+                    --icon: 50px
+                    @include flex
+                    align-items: center
+                    @include media(520)
+                        --icon: 45px
+                    &:not(:last-child)
+                        margin-bottom: 19px
+                    .ico
+                        flex: 0 1 auto
+                        height: var(--icon)
+                        width: var(--icon)
+                        border: 2px solid $primary
+                        border-radius: 50%
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        @include media(520)
+                            border-width: 1px
+                        img,svg
+                            width: calc(100% * .5)
+                            height: calc(100% * .5)
+                            object-fit: contain
+                    p>a
+                        padding-left: 0
+                        display: block
+                    a,p
+                        flex: 1
+                        padding-left: 22px
+                        color: $black
+                        @include media(520)
+                            padding-left: 12px
+                        &:hover
+                            color: $primary
+                        br
+                            @include media(520)
+                                display: none
+            .btn-div-wrap
+                @include media(520)
+                    text-align: center
+                > *
+                    &:not(:last-child)
+                        margin-right: 12px
+                        @include media(675)
+                            margin-right: 8px
+                .btn
+                    --padding: 28px
+                    @include media(675)
+                        --padding: 16px
+                        font-size: 14px
+.contact-secC
+    height: calc( 100vh - var(--headerfixed) )
+    line-height: 0
+    iframe
+        height: 100%
+        width: 100%
+        filter: grayscale(1)
+
+
+
+.contact-secB
+    padding: 100px 0 105px
+    background: $pink-light
+    @include media(675)
+        padding: 65px 0
+    .heading
+        margin-bottom: 62px
+    .form-wrap
+        max-width: 813px
+        margin-left: auto
+        margin-right: auto
+        .form
+            --item: 2
+            --gaplr: 57px
+            --gaptb: 30px
+            --borderbefore: var(--black)
+            --borderafter: var(--black)
+            --color: var(--black)
+            --labelbefore: rgb(0 0 0)
+            --labelafter: rgb(0 0 0  / .5 )
+            @include media(675)
+                --gaptb: 20px
+            @include media(520)
+                --item: 1
+            .submit-grp
+                .btn
+                    --padding: 54px

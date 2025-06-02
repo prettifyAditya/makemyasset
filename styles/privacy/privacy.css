@@ -1,0 +1,29 @@
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+.privacy-secA {
+  margin-top: var(--headerheight);
+  padding: 6rem 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .banner.thanks-banner .bg {
+    height: 600px;
+  }
+}
+.banner.thanks-banner .content h6 {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 42px;
+}/*# sourceMappingURL=privacy.css.map */

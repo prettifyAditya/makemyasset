@@ -1,0 +1,144 @@
+@import '../_var'
+
+.home-banner
+    position: relative
+    @include after(linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%))
+    overflow: hidden
+    &::after
+        top: auto
+        height: 80%
+        z-index: 3
+        @include media(675)
+            background: linear-gradient(0deg, #000000 35%, rgba(0, 0, 0, 0) 72%)
+    .bg
+        line-height: 0
+        height: 100vh
+        @include before(linear-gradient(180deg, #0000005e 0%, rgba(0, 0, 0, 0) 100%))
+        @include media(1152)
+            height: 600px
+        @include media(767)
+            height: 450px
+        img,video
+            height: 100%
+            width: 100%
+            object-fit: cover
+            user-select: none
+            pointer-events: none
+            object-position: top
+    .banner-wrapper,.figure-wrap
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+    .figure-wrap
+        line-height: 0
+        z-index: 2
+        transform: translateY(100%)
+        transition: 1.5s ease
+        overflow: hidden
+        @include media(675)
+            height: 64%
+            margin-bottom: 77px
+        &.is-animate
+            transform: translateY(0)
+        img
+            width: 100%
+            display: block
+            transition: 2s ease
+            @include media(675)
+                height: 100%
+                object-fit: cover
+                object-position: 60%
+            // &.active
+            //     position: relative
+            //     z-index: 1
+            &:not(.active)
+                position: absolute
+                left: 0
+                right: 0
+                bottom: 0
+                transform: translateY(100%)
+    .banner-wrapper
+        z-index: 4
+        @include media(675)
+            bottom: 38px
+    .home-banner-wrap
+        .home-banner-slider
+            height: 90px
+            @include media(1366)
+                height: 80px
+            @include media(1152)
+                height: 70px
+            @include media(991)
+                height: 58px
+            @include media(675)
+                height: 38px
+            h5
+                font-size: 90px
+                line-height: 1.5
+                font-family: $Kugile
+                color: $white
+                @include media(1366)
+                    font-size: 80px
+                @include media(1152)
+                    font-size: 70px
+                @include media(991)
+                    font-size: 58px
+                @include media(675)
+                    font-size: 38px
+        .sub-title-wrap
+            margin: 20px 0 60px
+            overflow: hidden
+            @include media(1366)
+                margin-bottom: 35px
+            @include media(675)
+                margin-bottom: 20px
+            .tabs
+                opacity: 1
+                transition: 1.2s ease
+                height: auto
+                &:not(.active)
+                    transform: translateY(100%) scale(.8)
+            h6
+                font-size: 32px
+                letter-spacing: 0.05em
+                color: $white
+                @include media(1366)
+                    font-size: 30px
+                @include media(1152)
+                    font-size: 26px
+                @include media(991)
+                    font-size: 22px
+                @include media(675)
+                    font-size: 18px
+    .scroll-btn
+        --btnsize: 55px
+        height: var(--btnsize)
+        width: calc(var(--btnsize) * 7/11)
+        border-radius: 20px
+        z-index: 3
+        border: 1px solid $white
+        margin-bottom: 60px
+        @include media(1366)
+            margin-bottom: 40px
+        @include media(675)
+            margin-bottom: 0
+            --btnsize: 45px
+        span
+            display: block
+            margin: 0 auto
+            width: 3px
+            height: 10px
+            border-radius: 25%
+            background: $white
+            animation: scroll 2.2s cubic-bezier(.15,.41,.69,.94) infinite
+            @keyframes scroll
+                0%
+                    opacity: 0
+                10%
+                    transform: translateY(0)
+                    opacity: 1
+                100%
+                    transform: translateY(15px)
+                    opacity: 0
+ 
