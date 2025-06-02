@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       <div className="banner home-banner">
         <div className="bg">
-          <Image width="" height="" alt="Banner Image"></Image>
+          <Image width="1280" height="700" alt="Banner Image"></Image>
         </div>
       </div>
     </main>
