@@ -11,9 +11,9 @@
 $scrollwidth: 8px
 
 :root
-    --headerpadding: 25px
+    --headerpadding: 20px
     --headerheight: 95px
-    --headerfixed: 60px
+    --headerfixed: 70px
     --footerstrip: 38px
     --primary: #CC9B50
     --secondary: #5D4115
@@ -66,6 +66,9 @@ body,html
 
 b
     @include font(500)
+
+p
+    color: $white
 
 small
     font-size: 14px
@@ -124,19 +127,31 @@ h3
     @include media(540)
         padding: 40px 0
 
+.dark_bg
+    background-color: $black
+
+.gray_bg
+    background-color: #101010
+
 .grad
-    -webkit-text-fill-color: transparent() 
+    -webkit-text-fill-color: transparent
     -webkit-background-clip: text 
     background-image: var(--gradient-b)
+    svg
+        path 
+            fill: var(--primary)
+            stroke: var(--primary)
  
 .heading
+    text-align: center
     h3,h2
+        display: inline-block
         font-family: $Optima
         font-size: 40px
         line-height: 1.2
         color: $white
         text-transform: uppercase
-        -webkit-text-fill-color: transparent()
+        -webkit-text-fill-color: transparent
         -webkit-background-clip: text 
         background-image: var(--gradient-b)
         @include media(1152)
@@ -205,6 +220,14 @@ h6
     text-transform: uppercase
 .flex
     @include flex
+.justify-center
+    justify-content: center
+.align-center
+    align-items: center 
+.gap5
+    gap: 5px
+.gap10
+    gap: 10px
 .inline-flex
     --gap: 12px
     display: inline-flex
@@ -257,8 +280,6 @@ button
     @include after
     &::before,&::after
         z-index: 1
-    &::after
-        content: none
     figure,.figure
         display: block
         overflow: hidden
@@ -287,6 +308,42 @@ button
             bottom: auto
             top: 50%
             translate: 0 -50%
+
+.property_col
+    overflow: hidden
+    cursor: pointer
+    @include shine
+    &:hover
+        figure
+            img
+                transform: scale(1.2)
+        figcaption
+            transform: translateY(0)
+    &::after
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%)
+    figcaption
+        transform: translateY(50%)
+        transition: .5s ease
+        padding: 0 40px 30px
+        h3
+            font-family: $Circular
+            font-size: 24px
+            line-height: 1
+            font-weight: 400
+            padding-bottom: 5px
+        .loc
+            display: flex
+            align-items: center
+            gap: 10px
+        .btn_wrapper
+            width: 100%
+            padding-top: 20px
+            align-items: center
+            gap: 20px
+            button, a
+                flex: 1
+                width: 100%
+
 .overlay
     position: fixed
     left: 0
@@ -354,6 +411,8 @@ button
     z-index: 1
     @include before($gradient-a)
     @include after($gradient-b)
+    path
+        fill: $black
     &::before,&::after
         z-index: -1
         transition: .5s ease
@@ -395,6 +454,7 @@ button
             border-top-color: $gradient-a
     &.white
         background: $white
+        color: $black
         &::before
             display: none
     &.w-100
@@ -484,9 +544,9 @@ button
             svg
                 width: auto
                 height: auto
-.swiper-prev
-    svg,img
-        transform: scaleX(-1)
+// .swiper-prev
+//     svg,img
+//         transform: scaleX(-1)
 
 .swiper-prev,.swiper-next
     --size: 45px
@@ -496,17 +556,13 @@ button
     display: flex
     align-items: center
     justify-content: center
-    background: $primary
-    border: 1px solid $primary
+    background: $gradient-b
     transition: .5s ease
     path
-        fill: $white
+        stroke: $white
     &:hover
         &:not(.swiper-button-disabled)
-            background: $white
-            border-color: $white
-            path
-                fill: $primary
+            
     &.no-background
         height: auto
         width: auto
@@ -531,16 +587,16 @@ button
                 border-color: $primary
                 path
                     fill: $white
-    &.primary-border
-        border-color: $primary
+    &.primary-border 
+        border: 1px solid $primary
         background: none
         path
-            fill: $primary
+            stroke: $primary
         &:hover
             &:not(.swiper-button-disabled)
                 background: $primary
                 path
-                    fill: $white
+                    stroke: $white
     &.white-border
         border-color: $white
         background: none
