@@ -977,7 +977,7 @@ button {
   padding: 0 var(--padding);
   overflow: hidden;
   text-transform: capitalize;
-  color: var(--black);
+  color: var(--white);
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1076,6 +1076,9 @@ button {
 .btn.white {
   background: var(--white);
   color: var(--black);
+}
+.btn.white:hover {
+  color: var(--white);
 }
 .btn.white::before {
   display: none;

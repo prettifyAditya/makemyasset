@@ -401,7 +401,7 @@ button
     padding: 0 var(--padding)
     overflow: hidden
     text-transform: capitalize
-    color: $black
+    color: $white
     appearance: none
     transition: .5s ease
     caret-color: transparent
@@ -455,6 +455,8 @@ button
     &.white
         background: $white
         color: $black
+        &:hover
+            color: $white
         &::before
             display: none
     &.w-100

@@ -86,7 +86,12 @@ export default function FeaturedSlider(){
                             </div>
                             <h3 className="price">{feature.price}</h3>
                             <div className="btn_wrapper">
-                                <button type="button" className="btn"><img src="/assets/icon/call.svg" alt="Call Icon" />Get a call back</button>
+                                <button type="button" className="btn" onClick={() => {
+                                document.querySelector('.enquire-pop').classList.add('is-open')
+                                document.querySelector('.overlay').classList.add('is-open')
+                                document.querySelector('body').classList.add('overflow-hidden')
+                            }}>
+                            <img src="/assets/icon/call.svg" alt="Call Icon" />Get a call back</button>
                                 <a href="javascript:;" className="btn white"><img src="/assets/icon/whatsapp.svg" alt="Whatsapp Icon" />Whatsapp</a>
                             </div>
                         </figcaption>
