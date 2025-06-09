@@ -10,114 +10,40 @@ import FeaturedSlider from "@/components/FeaturedSlider";
 import TopLocation from "@/components/TopLocation";
 import LuxuryTabbing from "@/components/LuxuryTabbing";
 import ClientSlider from "@/components/ClientSlider";
+import MySelect from "@/components/MySelect";
 
-const customStyles = {
-  control: (base, state) => ({
-      ...base,
-      width: "100%",
-      height: "100%",
-      color: "#fff",
-      backgroundColor: "none",
-      border: "none",
-      borderRadius: "none",
-      borderBottom: state.isFocused ? "1px solid var(--primary)" : "1px solid #616161",
-      boxShadow: state.isFocused ? "none" : "none",
-  }),
-  label: (base, state) => ({
-    ...base,
-    display: "none"
-  }),
-  valueContainer: (base) => ({
-      ...base,
-      height: "100%",
-      color: "#fff"
-    }),
-  input: (base, state) => ({
-      ...base,
-      width: "100%",
-      height: "40px",
-      color: "#fff",
-      minHeight: "100%",
-      minWidth: "100%"
-  }),
-  placeholder: (base, state) => ({
-      ...base,
-      color: "#9C9A9A",
-      fontFamily: "Circular"
-  }),
-  option: (base, state) => ({
-      ...base,
-      width: "100%",
-      background: state.isFocused ? "var(--gradient-a)" : "#fff",
-      marginBottom: "5px",
-      fontSize: "16px",
-      padding: "3px 10px",
-      color: state.isFocused ? "#fff" : "#000",
-      "&:hover": {
-        color: "#fff"
-      }
-    }),
-  menu: (base) => ({
-  ...base,
-  zIndex: 10,
-  width: "200px"
-  })
-}
+const options_Country = [
+  { value: "India", label: "India"},
+  { value: "Nigeria", label: "Nigeria"},
+  { value: "Africa", label: "Africa"},
+  { value: "Oman", label: "Oman"},
+]
 
-const selectOptions = [
-  {
-    key: "country",
-    placeholder: "Country",
-    options : [
-    { value: "India", label: "India"},
-    { value: "Nigeria", label: "Nigeria"},
-    { value: "Africa", label: "Africa"},
-    { value: "Oman", label: "Oman"},
-  ],
-  },
-  {
-    key: "allCities",
-    placeholder: "All Cities",
-    options: [
-    { value: "New Delhi", label: "New Delhi" },
-    { value: "Lagos",   label: "Lagos" },
-    { value: "Cairo",   label: "Cairo" },
-    { value: "Muscat",  label: "Muscat" },
-  ],
-  },
-  {
-    key: "property",
-    placeholder: "Property Type",
-    options: [
-      { value: "Residential",    label: "Residential" },
-      { value: "Commericial",  label: "Commericial" },
-      { value: "SCO Plots",  label: "SCO Plots" },
-    ],
-  },
-  {
-    key: "builder",
-    placeholder: "Builders",
-    options: [
-      { value: "Private",    label: "Private" },
-      { value: "M3M",  label: "M3M" },
-      { value: "Trinity",  label: "Trinity" },
-    ],
-  },
+const options_Cities = [
+  { value: "New Delhi", label: "New Delhi" },
+  { value: "Lagos",   label: "Lagos" },
+  { value: "Cairo",   label: "Cairo" },
+  { value: "Muscat",  label: "Muscat" },
+]
 
+const options_property = [
+  { value: "Residential",    label: "Residential" },
+  { value: "Commericial",  label: "Commericial" },
+  { value: "SCO Plots",  label: "SCO Plots" },
+]
+
+const options_builder = [
+  { value: "Private",    label: "Private" },
+  { value: "M3M",  label: "M3M" },
+  { value: "Trinity",  label: "Trinity" },
 ]
 
 export default function Home() {
-  const initialSelected = selectOptions.reduce(
-    (acc, { key }) => ({ ...acc, [key]: null}),
-    {}
-  )
-  const [selected, setSelected] = useState(initialSelected)
-  const handleChange = (key) => (value) => {
-    setSelected((prev) => ({
-      ...prev,
-      [key]: value,
-    }))
-  }
+  const [country, setCountry] = useState(null);
+  const [city, setCity] = useState(null);
+  const [property, setProperty] = useState(null);
+  const [builder, setBuilder] = useState(null);
+  
   return (
     <main>
       <div className="banner home-banner">
@@ -151,9 +77,34 @@ export default function Home() {
             <div className="heading">
               <h3>Search Properties</h3>
               <div className="upper_nav flex">
-                {selectOptions.map(({ key, placeholder, options}) => (
-                    <Select key={key} placeholder={placeholder} options={options} value={selected[key]} onChange={handleChange(key)} styles={customStyles} components={{ IndicatorSeparator: () => null }} />
-                ))}
+                <MySelect
+                  id="country-select"
+                  placeholder="Country"
+                  options={options_Country}
+                  selectedValue={country}
+                  onValueChange={setCountry}
+                />
+                <MySelect
+                  id="city-select"
+                  placeholder="All Cities"
+                  options={options_Cities}
+                  selectedValue={city}
+                  onValueChange={setCity}
+                />
+                <MySelect
+                  id="property-select"
+                  placeholder="Property Type"
+                  options={options_property}
+                  selectedValue={property}
+                  onValueChange={setProperty}
+                />
+                <MySelect
+                  id="builder-select"
+                  placeholder="Builders"
+                  options={options_builder}
+                  selectedValue={builder}
+                  onValueChange={setBuilder}
+                />
                   <button type="button" className="btn">
                     Find Property
                   </button>

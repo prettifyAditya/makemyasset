@@ -26,6 +26,14 @@ $black-filter: brightness(0) saturate(100%)
 
 //mixins
 
+@mixin gradient-border($border: $gradient-a,$sides: top bottom left right)
+    border-image-source: $border
+    border-image-repeat: repeat
+    border-image-slice: 1
+    @each $side in $sides
+        border-#{$side}-width: 1px
+        border-#{$side}-style: solid
+
 @mixin gradient-text($color: $gradient-a)
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent

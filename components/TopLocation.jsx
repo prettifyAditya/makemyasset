@@ -2,7 +2,8 @@ import { useEffect, useRef } from "react"
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; 
 import "swiper/css/navigation"
-import { Navigation } from "swiper/modules"
+import "swiper/css/pagination"
+import { Navigation, Pagination } from "swiper/modules"
 import Image from "next/image";
 
 
@@ -20,15 +21,22 @@ export default function TopLocation(){
         <div className="top-location-wrapper">
             <div className="swiper-nav location-nav">
                 <button className="location-prev swiper-prev primary-border"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" d="m14 7l-5 5l5 5" strokeWidth="1"/></svg></button>
+                <div className="fraction"></div>
                 <button className="location-next swiper-next primary-border"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" d="m10 17l5-5l-5-5" strokeWidth="1"/></svg></button>
             </div>
             <Swiper
                 className="location-slider"
                 ref={swiperRef}
-                modules={[Navigation]}
+                modules={[Navigation, Pagination]}
                 spaceBetween={40}
                 slidesPerView={1}
                 speed={1000}
+                pagination={{
+                    enabled: true,
+                    el: ".fraction",
+                    type: "fraction",
+                }
+                }
                 navigation={{
                     prevEl: ".location-prev",
                     nextEl: ".location-next"

@@ -133,159 +133,102 @@ header
                             &:nth-child(2)
                                 margin-right: 5px
                                 
-.model
-    &.ham-pop
-        left: 0
-        right: 0
+.ham-pop
+    right: 0
+    max-width: 480px
+    background: #fff
+    transform: translateX(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateX(0%)
+    .close
+        path
+            stroke-width: 2 !important
+    .model-body
+        padding: 75px 0px 30px
         height: 100%
-        max-width: 100%
-        transform: translateX(100%)
-        background: none
-        &.is-open
-            transform: translateX(0%)
-            .model-body
-                .upper-sec
-                    transform: translateY(0%)
-                    ul
-                        text-align: center
-                        padding-top: 7rem
-                        transform: translateY(0%) scale(1)
-                        opacity: 1
-                        transition: 1s ease .4s
-                .bottom-sec
-                    transform: translateY(0%)
-        .close
-            z-index: 3
-        .model-body
-            @include flex
-            flex-direction: column
-            height: 100%
-            .upper-sec
-                flex: 0 1 60%
-                max-height: 60%
-                height: 100%
-                background: $white
-                position: relative
-                z-index: 2
-                transform: translateY(-100%)
-                transition: .5s ease
-                ul
-                    text-align: center
-                    padding-top: 7rem
-                    transform: translateY(100%) scale(.8)
-                    opacity: 0
-                    @include media(1024)
-                        padding-left: 25px
-                        padding-right: 25px
-                    li
-                        display: inline-block
-                        vertical-align: middle
-                        line-height: 0
-                        @include media(991)
-                            display: block
-                        &:not(:last-child)
-                            margin-right: 54px
-                            @include media(1152)
-                                margin-right: 30px
-                            @include media(991)
-                                margin-right: 0
-                                margin-bottom: 20px
-                        a
-                            display: block
-                            font-size: 40px
-                            font-family: $Kugile
-                            line-height: 1
-                            color: #282828
-                            text-transform: uppercase
-                            position: relative
-                            --ico: 15px
-                            @include media(1280)
-                                font-size: 36px
-                            @include media(1152)
-                                font-size: 30px
-                            @include media(991)
-                                display: inline-block
-                            @include media(767)
-                                font-size: 28px
-                            &:hover
-                                color: $primary
-            .bottom-sec
-                flex: 0 1 40%
-                max-height: 40%
-                height: 100%
-                background: $white
-                position: relative
-                z-index: 2
-                border: none
-                padding: inherit
-                transform: translateY(100%)
-                transition: .5s ease
-                .bottom-sec-wrap
-                    background: #282828
-                    padding-top: 12rem
-                    height: 100%
+        overflow-y: auto
+        display: flex
+        flex-direction: column
+        // background: url(/assets/icon/infra-icon.png) no-repeat
+        // background-position-x: 90%
+        // background-position-y: 80%
+        // background-size: 100px
+        @include scrollbar(6px,$white,#5e5e5e,8px)
+        .ico
+            max-width: 70px
+            margin-bottom: 55px
+            line-height: 0
+            img,svg
+                width: 100%
+                height: auto
+        .nav-list
+            flex: 1
+            li
+                a
+                    font-family: $Optima
+                    display: block
+                    font-size: 28px
+                    line-height: 1.06
+                    padding: 10px 40px
+                    color: $black
+                    font-weight: 500
                     @include media(1366)
-                        padding-top: 8rem
-                    @include media(767)
-                        padding-top: 6rem
-                .sail-ico
-                    --size: 122px
-                    height: var(--size)
-                    position: absolute
-                    left: 50%
-                    translate: -50% 0
-                    bottom: calc(100% - 3rem)
-                    z-index: 2
-                    @include media(767)
-                        --size: 115px
-                        bottom: calc(100% - 3rem)
-                    img,video
-                        width: 100%
-                        height: 100%
-                        object-fit: cover
-                        animation: moveDown2 2s ease-in-out infinite alternate
-                        @keyframes moveDown2
-                            0%
-                                transform: translateY(20px)
-                            100%
-                                transform: translateY(0px)
-                .btm-wrp
-                    display: grid
-                    grid-template-columns: 1fr auto 1fr
-                    @include media(767)
-                        grid-template-columns: 100%
-                        text-align: center
-                        gap: 1rem
-                    .social-icons
-                        a
-                            display: inline-block
-                            vertical-align: middle
-                            &:not(:last-child)
-                                margin-right: 1.2rem
-                            path
-                                transition: .5s ease
-                            &:hover
-                                path
-                                    fill: $primary
-                    ul
-                        text-align: center
-                        li
-                            display: inline-block
-                            vertical-align: middle
-                            &:not(:last-child)
-                                margin-right: 1rem
-                            a
-                                color: $white
-                                &:hover
-                                    color: $primary
-                    .email-div
-                        text-align: right
-                        @include media(767)
-                            text-align: center
-                        a
-                            color: $white
-                            &:hover
-                                color: $primary
+                        font-size: 28px
+                    @include media(768)
+                        font-size: 24px
+                        padding: 10px 20px
+                    &:hover
+                        color: var(--primary)
+                        padding-left: 45px
+                        @include media(768)
+                            padding-left: 30px
+                        
+        .bottom-list
+            border-top: 1px solid #ccc
+            margin-top: 2rem
+            padding: 1rem 40px 0
+            display: flex
+            align-items: center
+            gap: 1rem
+            @include media(540)
+                padding: 1rem 20px 0
+            .social-icons
+                a
+                    display: inline-flex
+                    vertical-align: middle
+                    align-items: center
+                    justify-content: center
+                    height: 40px
+                    width: 40px
+                    border-radius: 50%
+                    line-height: 0
+                    overflow: hidden
+                    @include before($gradient-a)
+                    color: $text
+                    &::before
+                        border-radius: 50%
+                        transform: scale(1.5)
+                        z-index: -1
+                        opacity: 0
+                        transition: .2s ease
+                    &:not(:last-child)
+                        margin-right: 4px
+                    svg
+                        width: 24px
+                        height: 24px
+                        path
+                            transition: none
+                            &[stroke],&[fill="none"]
+                                stroke: currentColor
+                            &[fill]
+                                fill: currentColor
+                    &:hover
+                        color: $white
+                        &::before
+                            transition: .5s ease
+                            opacity: 1
+                            transform: scale(1)
 
 .enquire-pop
     right: 0

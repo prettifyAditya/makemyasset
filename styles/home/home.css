@@ -241,14 +241,25 @@ body {
   padding: 50px 0 90px;
 }
 .home-secC .top_location .top-location-wrapper .swiper-nav {
+  line-height: 1.5;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  gap: 15px;
   position: absolute;
   bottom: -10%;
   left: 50%;
   transform: translate(-50%, -10%);
+}
+.home-secC .top_location .top-location-wrapper .swiper-nav .swiper-pagination-fraction {
+  flex: 1;
+  max-width: 50px;
+  min-width: 50px;
+  font-size: 20px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: var(--gradient-a);
+  padding: 0 4px;
 }
 .home-secC .top_location .top-location-wrapper .location-slider {
   max-width: 1200px;

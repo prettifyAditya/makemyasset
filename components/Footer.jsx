@@ -56,6 +56,7 @@ export default function Footer() {
         <div
           className="overlay"
           onClick={() => {
+            document.querySelector(".ham-pop").classList.remove("is-open");
             document.querySelector(".enquire-pop").classList.remove("is-open");
             document.querySelector(".overlay").classList.remove("is-open");
             document.querySelector("body").classList.remove("overflow-hidden");

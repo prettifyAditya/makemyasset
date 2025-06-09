@@ -1,124 +1,127 @@
 @import '../_var'
 
-.contact-secA
-    padding: 120px 0 135px
-    @include media(991)
-        padding: 6rem 0
-    @include media(675)
-        padding: 65px 0
-    .flex
-        gap: 80px
-        margin-left: auto
-        margin-right: auto
-        align-items: center
-        justify-content: center
-        @include media(767)
-            gap: 3rem
-            justify-content: center
-        @include media(520)
-            gap: 1rem
-        figure
-            flex: 0 1 43%
-            line-height: 0
-            img
-                width: 100%
-        figcaption
-            flex: 1
-            @include media(767)
-                flex: 0 1 100%
-            .heading
-                @include media(520)
-                    display: none
-            .contact-info
-                margin: 25px 0 50px
-                @include media(1007)
-                    margin: 25px 0 50px
+.banner
+    &.contact-banner
+        .bg
+            video,img
+                filter: grayscale(1)
+        .banner-wrapper
+            h1
+                font-size: 36px
+                @include gradient-text
+                display: inline-block
+                letter-spacing: 0.5em
+                @include media(767)
+                    letter-spacing: 0.2em
                 @include media(675)
-                    margin: 25px 0 50px
-                li
-                    --icon: 50px
-                    @include flex
-                    align-items: center
-                    @include media(520)
-                        --icon: 45px
-                    &:not(:last-child)
-                        margin-bottom: 19px
+                    font-size: 30px
+.contact-secA
+    // background: url(../../images/vector/building-2.svg) no-repeat, url(../../images/logo-icon.svg) no-repeat
+    background-position: 0 100%, 17% 50%
+    background-size: 100% auto, 110px
+    padding: 15% 0
+    @include media(1240)
+        padding: 10% 0
+    @include media(1200)
+        background-size: 87% auto, 80px
+        background-position: 0 100%, 14% 50%
+    @include media(1007)
+        background-size: 100% auto, 40px
+        background-position: 0 100%, 50% 8%
+        padding: 12rem 0
+    .content
+        max-width: 800px
+        margin-left: auto
+        @include media(1200)
+            max-width: 700px
+        @include media(1007)
+            max-width: 100%
+        .heading
+            margin-bottom: 4rem
+            @include media(1007)
+                margin-bottom: 2rem
+            @include media(767)
+                text-align: center
+        .contact-inf
+            @include flex
+            gap: 22px
+            @include media(1240)
+                gap: 20px
+            .col-md
+                flex: 1
+                display: block
+                padding: 30px 12px
+                text-align: center
+                @include gradient-border
+                @include before($gradient-a)
+                @include media(675)
+                    flex: 0 1 100%
+                &::before
+                    z-index: -1
+                    transition: .5s ease
+                    opacity: 0
+                .ico
+                    margin-bottom: 1rem
+                    path
+                        transition: .5s ease
+                h6
+                    color: $white
+                    font-family: $Optima
+                    line-height: 1.2
+                    transition: .5s ease
+                    @include media(1240)
+                        font-size: 18px
+                &:hover
+                    &::before
+                        opacity: 1
                     .ico
-                        flex: 0 1 auto
-                        height: var(--icon)
-                        width: var(--icon)
-                        border: 2px solid $primary
-                        border-radius: 50%
-                        display: flex
-                        align-items: center
-                        justify-content: center
-                        @include media(520)
-                            border-width: 1px
-                        img,svg
-                            width: calc(100% * .5)
-                            height: calc(100% * .5)
-                            object-fit: contain
-                    p>a
-                        padding-left: 0
-                        display: block
-                    a,p
-                        flex: 1
-                        padding-left: 22px
+                        path
+                            fill: $black
+                    h6
                         color: $black
-                        @include media(520)
-                            padding-left: 12px
-                        &:hover
-                            color: $primary
-                        br
-                            @include media(520)
-                                display: none
-            .btn-div-wrap
-                @include media(520)
-                    text-align: center
-                > *
-                    &:not(:last-child)
-                        margin-right: 12px
-                        @include media(675)
-                            margin-right: 8px
-                .btn
-                    --padding: 28px
-                    @include media(675)
-                        --padding: 16px
-                        font-size: 14px
-.contact-secC
-    height: calc( 100vh - var(--headerfixed) )
-    line-height: 0
-    iframe
-        height: 100%
-        width: 100%
-        filter: grayscale(1)
-
+                &:first-child
+                    &:hover
+                        .ico
+                            path
+                                fill: none
+                                stroke: $black
 
 
 .contact-secB
-    padding: 100px 0 105px
-    background: $pink-light
-    @include media(675)
-        padding: 65px 0
+    line-height: 0
+    iframe
+        height: calc( 100vh - var(--headerfixed) )
+        filter: grayscale(1)
+        @include media(1007)
+            height: 500px
+.contact-secC
     .heading
-        margin-bottom: 62px
+        max-width: 519px
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 4rem
+        @include media(675)
+            max-width: 300px
     .form-wrap
         max-width: 813px
         margin-left: auto
         margin-right: auto
         .form
             --item: 2
+            --color: var(--white)
+            --labelbefore: none
+            --labelafter: none
+            --borderbefore: var(--gradient-a)
+            --borderafter: var(--gradient-b)
             --gaplr: 57px
-            --gaptb: 30px
-            --borderbefore: var(--black)
-            --borderafter: var(--black)
-            --color: var(--black)
-            --labelbefore: rgb(0 0 0)
-            --labelafter: rgb(0 0 0  / .5 )
+            --gaptb: 31px
             @include media(675)
-                --gaptb: 20px
-            @include media(520)
                 --item: 1
+            label,.current
+                @include gradient-text
+            .custom-select
+                &::before
+                    // background-image: url(../../icon/arrow-down-gradient.svg)
             .submit-grp
                 .btn
-                    --padding: 54px
+                    --padding: 55px
