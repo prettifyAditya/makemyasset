@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation"
 export default function Header(){
     const pathname = usePathname();
     const isBlogPage = pathname.startsWith('/blogs')
+    const isTermsPage = pathname.startsWith('/terms-conditions')
+    const isPolicyPage = pathname.startsWith('/privacy-policy')
     useEffect(() => {
         if (typeof window === "undefined") return;
         const handleScroll = () => {
@@ -25,7 +27,7 @@ export default function Header(){
     }, [])
     return(
         <>
-            <header className={isBlogPage ? 'header-fill' : ""}>
+            <header className={isBlogPage || isTermsPage || isPolicyPage ? 'header-fill' : ""}>
                 <div className="header-wrapper">
                     <div className="colA">
                         <Link href="/" className="logo">

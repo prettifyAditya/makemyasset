@@ -17,19 +17,19 @@ export default function Footer() {
                     <div className="imp_links">
                         <h4 className="grad">Company</h4>
                         <ul>
-                            <li><Link href="javascript:;">About Us</Link></li>
-                            <li><Link href="javascript:;">Contact Us</Link></li>
-                            <li><Link href="javascript:;">Terms & Conditions</Link></li>
-                            <li><Link href="javascript:;">Policy of Use</Link></li>
+                            <li><Link href="/about-us">About Us</Link></li>
+                            <li><Link href="/contact-us">Contact Us</Link></li>
+                            <li><Link href="/terms-conditions">Terms & Conditions</Link></li>
+                            <li><Link href="/privacy-policy">Policy of Use</Link></li>
                         </ul>
                     </div>
                     <div className="imp_links">
                         <h4 className="grad">Resources</h4>
                         <ul>
-                            <li><Link href="javascript:;">Awards & Recognition</Link></li>
-                            <li><Link href="javascript:;">Media Coverage</Link></li>
-                            <li><Link href="javascript:;">EMI Calculator</Link></li>
-                            <li><Link href="javascript:;">Blogs</Link></li>
+                            <li><Link href="/property-listing">Awards & Recognition</Link></li>
+                            <li><Link href="/property-listing">Media Coverage</Link></li>
+                            <li><Link href="/property-listing">EMI Calculator</Link></li>
+                            <li><Link href="/blogs">Blogs</Link></li>
                         </ul>
                     </div>
                 </div>

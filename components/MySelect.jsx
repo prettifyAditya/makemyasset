@@ -1,6 +1,7 @@
-"use client"
+'use client'
 import React from "react";
 import Select from "react-select";
+import { useEffect, useState } from 'react'
 
 const customStyles = {
   control: (base, state) => ({
@@ -66,6 +67,13 @@ export default function MySelect({
   selectedValue,
   onValueChange, 
 }) {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) return null
   return (
     <Select
       inputId={id}

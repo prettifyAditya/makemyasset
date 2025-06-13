@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function PropertyCol({imgSrc, PropName, PropLoc }){
     return(
         <div className="property_col item-md">
-            <Link href="property-details">
+            <Link href="/property-detail">
                 <figure>
                     <Image src={imgSrc} width="374" height="383" alt="Property Image" />
                 </figure>
@@ -15,7 +15,7 @@ export default function PropertyCol({imgSrc, PropName, PropLoc }){
                     <button type="button" className="btn">
                         Enquire Now
                     </button>
-                    <Link className="btn" href="/property-details">
+                    <Link className="btn" href="/property-detail">
                         View Details
                     </Link>
                 </div>

@@ -13,17 +13,39 @@
 }
 .privacy-secA {
   margin-top: var(--headerheight);
-  padding: 6rem 0;
+  padding: 5rem 0;
 }
-
-@media only screen and (max-width: 767px) {
-  .banner.thanks-banner .bg {
-    height: 600px;
+@media only screen and (max-width: 675px) {
+  .privacy-secA {
+    padding: 4rem 0;
   }
 }
-.banner.thanks-banner .content h6 {
-  max-width: 480px;
+.privacy-secA .website-content .grad {
+  display: flex;
+  justify-content: center;
+}
+
+.banner.thank-you-banner .bg {
+  height: 100vh;
+}
+.banner.thank-you-banner .banner-wrapper {
+  top: 50%;
+  translate: 0 -50%;
+}
+.banner.thank-you-banner .banner-wrapper .content {
+  max-width: 435px;
+  margin: 0 auto;
+}
+.banner.thank-you-banner .banner-wrapper .content h1 {
+  margin-bottom: 10px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: var(--gradient-a);
+  display: inline-block;
+}
+.banner.thank-you-banner .banner-wrapper .content p {
+  margin-bottom: 3rem;
+  max-width: 345px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 42px;
 }/*# sourceMappingURL=privacy.css.map */

@@ -2,7 +2,7 @@
 
 .blog-listing-secA
     margin-top: var(--headerheight)
-    padding: 106px 0 95px
+    padding-bottom: 0
     .content
         p
             font-size: 18px
@@ -16,9 +16,6 @@
                 max-width: 250px
                 margin-left: auto
                 margin-right: auto
-.blog-listing-secB
-    padding-bottom: 7rem
-
 
 // Blog detail
 
@@ -47,7 +44,7 @@
             position: absolute
             bottom: 12%
             right: 4rem
-            z-index: 1
+            z-index: 3
             @include media(675) 
                 right: 15px
                 bottom: auto
@@ -90,13 +87,13 @@
                         &:hover
                             fill: $primary
 
-.blog-detail-secA
-    padding: 6.25rem 0 10.5rem
-    // background: url(../../images/vector/A-vector.svg) no-repeat
-    background-position: bottom right
-    @include media(991)
-        padding: 5rem 0
-    @include media(767)
-        padding: 4rem 0
 .blog-detail-secB
-    padding: 3.8rem 0 7.5rem
+    .upper-sec
+        position: relative
+        .slider-nav
+            position: absolute
+            right: 0
+            top: 50%
+            transform: translate(0, -50%)
+    .more-blogs-slider
+        padding-top: 50px

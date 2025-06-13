@@ -566,6 +566,7 @@ h3 {
 }
 
 .grad {
+  display: inline-block;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-image: var(--gradient-b);
@@ -872,6 +873,77 @@ button {
   translate: 0 -50%;
 }
 
+.blog-col figure, .blog-col .figure {
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+.blog-col figure::before, .blog-col .figure::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: white;
+  box-shadow: 0 0 55px 12px white;
+  transform: skewX(-20deg);
+  z-index: 1;
+}
+.blog-col figure:hover::before, .blog-col .figure:hover::before {
+  animation: shine 0.4s linear;
+  animation-fill-mode: none;
+}
+.blog-col figure img, .blog-col .figure img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.8s ease;
+}
+.blog-col::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 75%);
+}
+.blog-col figcaption {
+  padding: 0 35px 42px;
+}
+@media only screen and (max-width: 1200px) {
+  .blog-col figcaption {
+    padding: 0 25px 30px;
+  }
+}
+@media only screen and (max-width: 675px) {
+  .blog-col figcaption {
+    padding: 0 15px 30px;
+  }
+}
+.blog-col figcaption h6 {
+  font-size: 24px;
+  line-height: 1.25;
+  font-family: "Circular";
+  color: var(--white);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1200px) {
+  .blog-col figcaption h6 {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 675px) {
+  .blog-col figcaption h6 {
+    font-size: 20px;
+  }
+}
+.blog-col:hover figure img {
+  transform: scale(1.1);
+}
+
 .project-col {
   border: 1px solid #363535;
 }
@@ -1139,13 +1211,25 @@ button {
   --space: 12px;
 }
 .lctn.clndr::before {
-  background-image: url(/assets/icon/calender.svg);
+  background-image: url(/assets/icon/calendar.svg);
 }
 
 .common-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px 20px;
+}
+@media only screen and (max-width: 991px) {
+  .common-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px 18px;
+  }
+}
+@media only screen and (max-width: 675px) {
+  .common-grid {
+    grid-template-columns: 100%;
+    grid-gap: 10px;
+  }
 }
 
 .overlay {
@@ -1665,7 +1749,6 @@ button {
   font-size: 48px;
   margin-bottom: 45px;
   text-align: center;
-  font-family: Kugile;
 }
 @media only screen and (max-width: 675px) {
   .website-content h1 {
@@ -2144,6 +2227,10 @@ button {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.blog-col figcaption .clndr {
+  margin-bottom: 20px;
 }
 
 .banner.property-listing-banner::before {

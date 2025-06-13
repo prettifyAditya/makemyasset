@@ -13,11 +13,11 @@ export default function Hamburger() {
             <button className="close" onClick={navigate}><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
             <div className="model-body">
                 <ul className="nav-list">
-                    <li><Link href="javascript:;">Commercial</Link></li>
-                    <li><Link href="javascript:;">Residential</Link></li>
-                    <li><Link href="javascript:;">About Us</Link> </li>
-                    <li><Link href="javascript:;">Contact Us</Link></li>
-                    <li><Link href="javascript:;">Blogs</Link></li>
+                    <li><Link href="/property-listing" onClick={navigate}>Commercial</Link></li>
+                    <li><Link href="/property-listing" onClick={navigate}>Residential</Link></li>
+                    <li><Link href="/about-us" onClick={navigate}>About Us</Link> </li>
+                    <li><Link href="/contact-us" onClick={navigate}>Contact Us</Link></li>
+                    <li><Link href="/blogs" onClick={navigate}>Blogs</Link></li>
                 </ul>
                 <div className="bottom-list">
                     <div className="social-icons">

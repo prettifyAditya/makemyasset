@@ -134,6 +134,7 @@ h3
     background-color: #101010
 
 .grad
+    display: inline-block
     -webkit-text-fill-color: transparent
     -webkit-background-clip: text 
     background-image: var(--gradient-b)
@@ -316,6 +317,39 @@ button
             top: 50%
             translate: 0 -50%
 
+.blog-col
+    figure,.figure
+        display: block
+        line-height: 0
+        overflow: hidden
+        @include shine
+        img
+            width: 100%
+            object-fit: cover
+            transition: .8s ease
+    &::before
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 75%)
+    figcaption
+        padding: 0 35px 42px
+        @include media(1200)
+            padding: 0 25px 30px
+        @include media(675)
+            padding: 0 15px 30px
+        h6
+            font-size: 24px
+            line-height: 1.25
+            font-family: 'Circular'
+            color: $white
+            @include line-clamp(2)
+            @include media(1200)
+                font-size: 22px
+            @include media(675)
+                font-size: 20px
+    &:hover
+        figure
+            img
+                transform: scale(1.1)
+
 .project-col
     border: 1px solid #363535
     figure,.figure
@@ -480,13 +514,19 @@ button
         --arrow: 17px
         --space: 12px
         &::before
-            background-image: url(/assets/icon/calender.svg)
+            background-image: url(/assets/icon/calendar.svg)
 
 
 .common-grid
     display: grid
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: repeat(3,1fr)
     grid-gap: 50px 20px
+    @include media(991)
+        grid-template-columns: repeat(2,1fr)
+        grid-gap: 30px 18px
+    @include media(675)
+        grid-template-columns: 100%
+        grid-gap: 10px
 
 .overlay
     position: fixed
@@ -876,7 +916,6 @@ button
         font-size: 48px
         margin-bottom: 45px
         text-align: center
-        font-family: $Kugile
         @include media(675)
             font-size: 34px
         @include media(520)
@@ -1162,3 +1201,8 @@ button
                 max-width: 160px
                 margin-left: auto
                 margin-right: auto
+
+.blog-col
+    figcaption
+        .clndr
+            margin-bottom: 20px
