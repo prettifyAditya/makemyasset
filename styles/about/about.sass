@@ -1,0 +1,104 @@
+@import '../_var'
+
+.banner
+    &.about-banner
+        .bg
+            video,img
+                filter: grayscale(1)
+        .banner-wrapper
+            h1
+                font-size: 36px
+                @include gradient-text
+                display: inline-block
+                letter-spacing: 0.5em
+                @include media(767)
+                    letter-spacing: 0.2em
+                @include media(675)
+                    font-size: 30px
+
+.about-secA
+    .flex
+        align-items: center
+        gap: 50px
+        .colA, .colB
+            flex: 1
+        .colA
+            text-align: left
+            h2
+                padding-bottom: 20px
+            p
+                padding-right: 10px
+
+.about-secB
+    position: relative
+    align-items: center
+    height: 80vh
+    .bg
+        width: 100%
+        height: 100%
+        bottom: 0
+        left: 0
+        @include before()
+        position: absolute
+        &::before
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%), linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%)
+            z-index: 0
+        video
+            object-fit: cover
+            width: 100%
+            height: 100%
+    .colA, .colB
+        flex: 1
+        text-align: center
+        padding: 70px 50px
+        position: relative
+        z-index: 0
+        .icon
+            width: 80px
+            height: 80px
+            margin: 0 auto 20px
+            img
+                width: 100%
+                height: 100%
+        h3
+            font-size: 36px
+            font-weight: 700
+            padding-bottom: 20px
+        p
+            max-width: 450px
+            margin: 0 auto
+
+.about-secC
+    figure, figcaption
+        line-height: 0
+    figure
+        flex: 0 1 30%
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover 
+    figcaption
+        flex: 1
+        padding: 50px 
+        text-align: left
+        h2
+            padding-bottom: 20px
+        .content-wrap
+            border-right: 1px solid #fff
+            .scroll-content
+                height: 260px
+                overflow-y: auto
+                padding-right: 40px
+                margin-right: -3px
+                list-style: none
+                &::-webkit-scrollbar
+                    width: 6px
+                    height: 4px
+                &::-webkit-scrollbar-thumb
+                    background: var(--gradient-b)
+                p
+                    line-height: 1.2
+                    padding-bottom: 10px
+        .designation
+            padding-top: 30px
+            line-height: 1.5

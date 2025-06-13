@@ -567,7 +567,7 @@ h3 {
 .heading {
   text-align: center;
 }
-.heading h3, .heading h2 {
+.heading h3, .heading h2, .heading h1 {
   display: inline-block;
   font-family: Optima;
   font-size: 40px;
@@ -580,13 +580,26 @@ h3 {
   background-image: var(--gradient-b);
 }
 @media only screen and (max-width: 1152px) {
-  .heading h3, .heading h2 {
+  .heading h3, .heading h2, .heading h1 {
     font-size: 32px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .heading h3, .heading h2 {
+  .heading h3, .heading h2, .heading h1 {
     font-size: 28px;
+  }
+}
+.heading h1 {
+  font-size: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .heading h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .heading h1 {
+    font-size: 32px;
   }
 }
 .heading.h-medium h3, .heading.h-medium h2 {

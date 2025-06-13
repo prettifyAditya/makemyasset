@@ -4,7 +4,10 @@ import Link from "next/link"
 import "/styles/header/header.css"
 import { useEffect } from "react"
 import Hamburger from "./Hamburger"
+import { usePathname } from "next/navigation"
 export default function Header(){
+    const pathname = usePathname();
+    const isBlogPage = pathname.startsWith('/blogs')
     useEffect(() => {
         if (typeof window === "undefined") return;
         const handleScroll = () => {
@@ -22,7 +25,7 @@ export default function Header(){
     }, [])
     return(
         <>
-            <header>
+            <header className={isBlogPage ? 'header-fill' : ""}>
                 <div className="header-wrapper">
                     <div className="colA">
                         <Link href="/" className="logo">
