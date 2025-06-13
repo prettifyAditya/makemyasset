@@ -9,6 +9,22 @@ const options_Budget = [
   { value: "₹ 1 Cr to ₹ 10 Cr", label: "₹ 1 Cr to ₹ 10 Cr"},
   { value: "₹ 10 Cr  and above", label: "₹ 10 Cr  and above"},
 ]
+const customStyles = {
+  control: (base, state) => ({
+      ...base,
+      width: "100%",
+      height: "100%",
+      color: "#fff",
+      backgroundColor: "none",
+      border: "none",
+      borderRadius: "none",
+      borderBottom: state.isFocused ? "1px solid var(--primary)" : "1px solid #616161",
+      boxShadow: state.isFocused ? "none" : "none",
+      '&:hover': {
+        borderColor: 'var(--primary)'
+      }
+  }),
+}
 export default function ContactUs(){
     const [budget, setBudget] = useState("What's your Budget")
     return (

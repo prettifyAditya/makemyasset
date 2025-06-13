@@ -14,6 +14,9 @@ const customStyles = {
       borderRadius: "none",
       borderBottom: state.isFocused ? "1px solid var(--primary)" : "1px solid #616161",
       boxShadow: state.isFocused ? "none" : "none",
+      '&:hover': {
+        borderColor: 'var(--primary)'
+      }
   }),
   label: (base, state) => ({
     ...base,
